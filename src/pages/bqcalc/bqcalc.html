@@ -1,0 +1,60 @@
+
+<ion-header>
+    
+      <ion-navbar>
+        <ion-title  style="font-size:0.75em; font-family: 'Source Sans Pro', sans-serif; font-weight:400; color: #40404B;">Mamposteria </ion-title>
+      </ion-navbar>
+    
+    </ion-header>
+    
+    
+    <ion-content padding>
+       
+        <ion-list>
+          <div>
+             <ion-item-divider >
+                Selecciona el tipo de Bloque
+            </ion-item-divider>
+    
+                <ion-list radio-group [(ngModel)]="M_radioValue">
+                    <ion-item>
+                        <ion-label>{{ mamType[0].text }}</ion-label>
+                        <ion-radio  value={{mamType[0].value}} (ionSelect)="mcqAnswer(0.029)"></ion-radio>
+                      </ion-item>
+                    
+                      <ion-item>
+                        <ion-label>{{ mamType[1].text }}</ion-label>
+                        <ion-radio  value={{mamType[1].value}} (ionSelect)="mcqAnswer(0.031)"></ion-radio>
+                      </ion-item>
+                    
+                      <ion-item>
+                        <ion-label>{{ mamType[2].text }}</ion-label>
+                        <ion-radio  value={{mamType[2].value}} (ionSelect)="mcqAnswer(0.039)"></ion-radio>
+                      </ion-item>
+                    
+                </ion-list>
+         
+           </div>
+        </ion-list>
+    <ion-list>
+        <ion-item-divider >
+            Introduzca las dimensiones del muro
+        </ion-item-divider>
+        <div style="width:240px; height: 80px; margin:0 auto; padding-top:10px;" >
+            <div style="width:120px; float:left;">
+                <ion-item>
+                  <ion-input type="number" step="any" placeholder="Base(m)" step="any" item-width="60px" id="inputBase"  [(ngModel)]="valueBase" name="valueBase"></ion-input>
+                </ion-item>
+            </div>
+            <div style="width:120px; float:right;">
+                <ion-item>
+                   <ion-input class="inputAlturaClass" type="number" placeholder="Altura(m)" step="any" item-width="60px" id="inputAltura" [(ngModel)]="valueAltura"></ion-input>
+                </ion-item>
+            </div> 
+          </div>
+          <div style="text-align:center;"  >
+              <button  ion-button (click)="calc_mamposteria()" >Calcular</button>
+            </div>
+        </ion-list>
+    </ion-content>
+    

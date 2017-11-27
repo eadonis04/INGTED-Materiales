@@ -1,0 +1,35 @@
+page-bresultados {
+    .rowTable{
+        background-color: #ffffff;
+        color:#2c3e50;
+        text-align: left;
+    }
+    .THTable{
+        background-color: #ecf0f1;
+        color:#2c3e50;
+        text-align: left;
+    }
+    table {
+        border: 0px solid #ccc;
+        border-collapse: collapse;
+        margin: 0;
+        padding: 0;
+        width: 100%;}
+
+        table tr {
+            background: #f8f8f8;
+            border: 1px solid #ddd;
+            padding: .35em;
+          }
+          table th,
+          table td {
+            padding: .625em;
+            text-align: center;
+          }
+          table th {
+            font-size: .85em;
+            letter-spacing: .1em;
+            text-transform: uppercase;
+          }
+
+}
