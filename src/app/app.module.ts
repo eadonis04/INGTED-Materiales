@@ -6,7 +6,7 @@ import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { ListPage } from '../pages/list/list';
 import { BresultadosPage } from '../pages/bresultados/bresultados';
-import { PipeCantRoundPage } from '../pages/Pipes/PipeCantRound';
+
 
 
 import { EmailComposer } from '@ionic-native/email-composer';
@@ -20,8 +20,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     MyApp,
     HomePage,
     ListPage,
-    BresultadosPage,
-    PipeCantRoundPage
+    BresultadosPage
 
     //BlockCaclPage
   ],
