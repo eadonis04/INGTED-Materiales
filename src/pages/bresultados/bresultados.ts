@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import {Pipe} from '@angular/core';
 import { EmailComposer } from '@ionic-native/email-composer';
+import { DatabaseProvider } from '../../providers/database/database'
 
 
 
@@ -30,7 +31,7 @@ export class BresultadosPage {
 
 
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private emailComposer: EmailComposer) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, private emailComposer: EmailComposer, private database: DatabaseProvider ) {
     console.log(this.navParams.get('base'));
     console.log(this.navParams.get('altura'));
     console.log(this.navParams.get('tipoBloque'));
@@ -42,50 +43,58 @@ export class BresultadosPage {
     //console.log(this.Bloques)
   }
   mampMaterials0: any[];
-  mampMaterials1: any[];
-  mampMaterials2: any[];
+
   ngOnInit(): void {
-    this.mampMaterials0 = [
+    if (this.Espesor == 0.039) {
+      
+      this.mampMaterials0 = [
+        
+                {Cant: this.Area*12.875, description: 'Bloques de 0.20 mts (8")', ud: 'ud'},
+                {Cant: this.Area*0.055, description: 'Acero 3/8" x 20 G60', ud: 'qq'},
+                {Cant: this.Area*0.089, description: 'Hormigón 140 KG/cms2 (1:3:5 a mano)', ud:'m3'},
+                {Cant: this.Area*0.076, description: 'Grava Triturada de 3/4"', ud: 'm3' },
+                {Cant: this.Area*0.046, description: 'Arena Gruesa Lavada o Triturada', ud: 'm3' },
+                {Cant: this.Area*0.039, description: 'Arena gruesa ITABO (de mina para Mortero)', ud: 'm3' },
+                {Cant: this.Area*1.02, description: 'Cemento gris tipo Portland', ud: 'fda' },
+                {Cant: this.Area*0.11, description: 'Alambre dulce #18', ud: 'qq'},
+                {Cant: this.Area*8.03, description: 'Agua', Ud:'gal'},
+                {Cant: this.Area*0.039, description: 'Mortero 1:3 en juntas', Ud:'m3'},
+            ];
+        
 
-        {Cant: 12.875, description: 'Bloques de 0.15 mts (6")', ud: 'ud'},
-        {Cant: 0.055, description: 'Acero 3/8" x 20 G60', ud: 'qq'},
-        {Cant: 0.089, description: 'Hormigón 140 KG/cms2 (1:3:5 a mano)', ud:'m3'},
-        {Cant: 0.076, description: 'Grava Triturada de 3/4"', ud: 'm3' },
-        {Cant: 0.046, description: 'Arena Gruesa Lavada o Triturada', ud: 'm3' },
-        {Cant: 0.039, description: 'Arena gruesa ITABO (de mina para Mortero)', ud: 'm3' },
-        {Cant: 1.02, description: 'Cemento gris tipo Portland', ud: 'fda' },
-        {Cant: 0.11, description: 'Alambre dulce #18', ud: 'qq'},
-        {Cant: 8.03, description: 'Agua', Ud:'gal'},
-        {Cant: 0.039, description: 'Mortero 1:3 en juntas', Ud:'m3'},
-    ];
+    } if (this.Espesor == 0.031) {
 
-    this.mampMaterials1 = [
+      this.mampMaterials0 = [
+        
+                {Cant: this.Area*12.875, description: 'Bloques de 0.15 mts (6")', ud: 'ud'},
+                {Cant: this.Area*0.055, description: 'Acero 3/8" x 20 G60', ud: 'qq'},
+                {Cant: this.Area*0.024, description: 'Hormigón 140 KG/cms2 (1:3:5 a mano)', ud:'m3'},
+                {Cant: this.Area*0.02, description: 'Grava Triturada de 3/4"', ud: 'm3' },
+                {Cant: this.Area*0.012, description: 'Arena Gruesa Lavada o Triturada', ud: 'm3' },
+                {Cant: this.Area*0.029, description: 'Arena gruesa ITABO (de mina para Mortero)', ud: 'm3' },
+                {Cant: this.Area*0.50, description: 'Cemento gris tipo Portland', ud: 'fda' },
+                {Cant: this.Area*0.11, description: 'Alambre dulce #18'},
+                {Cant: this.Area*3.44, description: 'Agua',ud:'gal'},
+                {Cant: this.Area*0.031, description: 'Mortero 1:3 en juntas', Ud:'m3'},
+              ];
 
-        {Cant: 12.875, description: 'Bloques de 0.15 mts (6")', ud: 'ud'},
-        {Cant: 0.055, description: 'Acero 3/8" x 20 G60', ud: 'qq'},
-        {Cant: 0.024, description: 'Hormigón 140 KG/cms2 (1:3:5 a mano)', ud:'m3'},
-        {Cant: 0.02, description: 'Grava Triturada de 3/4"', ud: 'm3' },
-        {Cant: 0.012, description: 'Arena Gruesa Lavada o Triturada', ud: 'm3' },
-        {Cant: 0.029, description: 'Arena gruesa ITABO (de mina para Mortero)', ud: 'm3' },
-        {Cant: 0.50, description: 'Cemento gris tipo Portland', ud: 'fda' },
-        {Cant: 0.11, description: 'Alambre dulce #18'},
-        {Cant: 3.44, description: 'Agua',ud:'gal'},
-        {Cant: 0.039, description: 'Mortero 1:3 en juntas', Ud:'m3'},
-    ];
-  
-    this.mampMaterials2 = [
+      
+    } if (this.Espesor == 0.029) {
 
-        {Cant: 12.875, description: 'Bloques de 0.15 mts (6")', ud: 'ud'},
-        {Cant: 0.055, description: 'Acero 3/8" x 20 G60', ud: 'qq'},
-        {Cant: 0.020, description: 'Hormigón 140 KG/cms2 (1:3:5 a mano)', ud:'m3'},
-        {Cant: 0.017, description: 'Grava Triturada de 3/4"', ud: 'm3' },
-        {Cant: 0.010, description: 'Arena Gruesa Lavada o Triturada', ud: 'm3' },
-        {Cant: 0.021, description: 'Arena gruesa ITABO (de mina para Mortero)', ud: 'm3' },
-        {Cant: 0.37, description: 'Cemento gris tipo Portland', ud: 'fda' },
-        {Cant: 0.11, description: 'Alambre dulce #18'},
-        {Cant: 2.65, description: 'Agua',ud:'gal'},
-        {Cant: 0.039, description: 'Mortero 1:3 en juntas', Ud:'m3'},
-    ];
+     this.mampMaterials0 = [
+        
+                {Cant: this.Area*12.875, description: 'Bloques de 0.15 mts (6")', ud: 'ud'},
+                {Cant: this.Area*0.055, description: 'Acero 3/8" x 20 G60', ud: 'qq'},
+                {Cant: this.Area*0.020, description: 'Hormigón 140 KG/cms2 (1:3:5 a mano)', ud:'m3'},
+                {Cant: this.Area*0.017, description: 'Grava Triturada de 3/4"', ud: 'm3' },
+                {Cant: this.Area*0.010, description: 'Arena Gruesa Lavada o Triturada', ud: 'm3' },
+                {Cant: this.Area*0.021, description: 'Arena gruesa ITABO (de mina para Mortero)', ud: 'm3' },
+                {Cant: this.Area*0.37, description: 'Cemento gris tipo Portland', ud: 'fda' },
+                {Cant: this.Area*0.11, description: 'Alambre dulce #18'},
+                {Cant: this.Area*2.65, description: 'Agua',ud:'gal'},
+                {Cant: this.Area*0.029, description: 'Mortero 1:3 en juntas', Ud:'m3'},
+            ];
+          }
   }
 
   /*CantRound(d,e){
@@ -98,10 +107,10 @@ export class BresultadosPage {
 
   ionViewDidLoad() {
       
-    console.log(this.Bloques)
-    console.log(this.Espesor[0].Cant);
-    console.log(this.mampMaterials0);
+    console.log(this.mampMaterials0)
+
   }
+
 
   SendDateEmail(){
     let email = {

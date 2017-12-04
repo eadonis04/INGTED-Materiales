@@ -37,92 +37,72 @@
               <tr>
                 <td>1</td>
                 <td style="text-align:left;">
-                    <P *ngIf="Espesor == 0.039">bloques de 0.20 mts (8") </P>
-                    <P *ngIf="Espesor == 0.031">bloques de 0.15 mts (6")</P>
-                    <P *ngIf="Espesor == 0.029">bloques de 0.10 mts (4")</P>
+                    <P> {{ mampMaterials0[0].description }} </P>
+
                 </td>
                 <td >
-                    <P *ngIf="Espesor == 0.039">{{ Area * mampMaterials0[0].Cant | number : '1.2-2'}} ud</P>
-                    <P *ngIf="Espesor == 0.031">{{ Area * mampMaterials1[0].Cant | number : '1.2-2'}} ud</P>
-                    <P *ngIf="Espesor == 0.029">{{ Area * mampMaterials2[0].Cant | number : '1.2-2'}} ud</P>
+                    <P>{{ mampMaterials0[0].Cant | number : '1.2-2'}} ud</P>
                 </td>
                 <td>
-                    <P *ngIf="Espesor == 0.039">{{ Area * mampMaterials0[0].Cant | number : '1.0-0'}} ud</P>
-                    <P *ngIf="Espesor == 0.031">{{ Area * mampMaterials1[0].Cant | number : '1.0-0'}} ud</P>
-                    <P *ngIf="Espesor == 0.029">{{ Area * mampMaterials2[0].Cant | number : '1.0-0'}} ud</P>
+                    <P>{{  mampMaterials0[0].Cant | number : '1.0-0'}} ud</P>
+
                 </td>
               </tr>
               <tr>
                 <td>2</td>
                 <td style="text-align:left;">
-                  <P *ngIf="Espesor == 0.039">{{ mampMaterials0[1].description}}</P>
-                  <P *ngIf="Espesor == 0.031">{{ mampMaterials1[1].description}}</P>
-                  <P *ngIf="Espesor == 0.029">{{ mampMaterials2[1].description}}</P>
+                  <P>{{ mampMaterials0[1].description}}</P>
+
                 </td>
                 <td>
-                  <P *ngIf="Espesor == 0.039">{{ Area * mampMaterials0[1].Cant | number : '1.2-2'}} qq</P>
-                  <P *ngIf="Espesor == 0.031">{{ Area * mampMaterials1[1].Cant | number : '1.2-2'}} qq</P>
-                  <P *ngIf="Espesor == 0.029">{{ Area * mampMaterials2[1].Cant | number : '1.2-2'}} qq</P>
+                  <P>{{  mampMaterials0[1].Cant | number : '1.2-2'}} qq</P>
+
                 </td>
                 <td>
-                  <P *ngIf="Espesor == 0.039">{{ Area * mampMaterials0[1].Cant | number : '1.1-1'}} qq</P>
-                  <P *ngIf="Espesor == 0.031">{{ Area * mampMaterials1[1].Cant | number : '1.1-1'}} qq</P>
-                  <P *ngIf="Espesor == 0.029">{{ Area * mampMaterials2[1].Cant | number : '1.1-1'}} qq</P>
+                  <P>{{ mampMaterials0[1].Cant | number : '1.1-1'}} qq</P>
+
                 </td>
               </tr>
               <tr >
                 <td style="background-color:#2980b9; color:#ecf0f1;">3</td>
                 <td style="text-align:left;">
-                <P *ngIf="Espesor == 0.039">{{ mampMaterials0[2].description}}</P>
-                <P *ngIf="Espesor == 0.031">{{ mampMaterials1[2].description}}</P>
-                <P *ngIf="Espesor == 0.029">{{ mampMaterials2[2].description}}</P>
+                <P>{{ mampMaterials0[2].description}}</P>
+
               </td>
               <td >
-                <P *ngIf="Espesor == 0.039">{{ Area * mampMaterials0[2].Cant | number : '1.2-2'}} m <sub>3</sub></P>
-                <P *ngIf="Espesor == 0.031">{{ Area * mampMaterials1[2].Cant | number : '1.2-2'}} m <sub>3</sub></P>
-                <P *ngIf="Espesor == 0.029">{{ Area * mampMaterials2[2].Cant | number : '1.2-2'}} m <sub>3</sub></P>
+                <P>{{  mampMaterials0[2].Cant | number : '1.2-2'}} m <sub>3</sub></P>
+
               </td>
               <td>
-                <P *ngIf="Espesor == 0.039">{{ Area * mampMaterials0[2].Cant | number : '1.0-1'}} m <sub>3</sub></P>
-                <P *ngIf="Espesor == 0.031">{{ Area * mampMaterials1[2].Cant | number : '1.0-1'}} m <sub>3</sub></P>
-                <P *ngIf="Espesor == 0.029">{{ Area * mampMaterials2[2].Cant | number : '1.0-1'}} m <sub>3</sub></P>
+                <P>{{  mampMaterials0[2].Cant | number : '1.0-1'}} m <sub>3</sub></P>
+
               </td>
             </tr>
 
               <tr>
                   <td style=" color:#2980b9;">3.1</td>
                   <td style="text-align:left;">
-                  <P *ngIf="Espesor == 0.039">{{ mampMaterials0[3].description}}</P>
-                  <P *ngIf="Espesor == 0.031">{{ mampMaterials1[3].description}}</P>
-                  <P *ngIf="Espesor == 0.029">{{ mampMaterials2[3].description}}</P>
+                  <P>{{ mampMaterials0[3].description}}</P>
+
                 </td>
                 <td>
-                  <P *ngIf="Espesor == 0.039">{{ Area * mampMaterials0[3].Cant | number : '1.2-2'}} m <sub>3</sub></P>
-                  <P *ngIf="Espesor == 0.031">{{ Area * mampMaterials1[3].Cant | number : '1.2-2'}} m <sub>3</sub></P>
-                  <P *ngIf="Espesor == 0.029">{{ Area * mampMaterials2[3].Cant | number : '1.2-2'}} m <sub>3</sub></P>
+                  <P>{{  mampMaterials0[3].Cant | number : '1.2-2'}} m <sub>3</sub></P>
+
                 </td>
                 <td>
-                  <P *ngIf="Espesor == 0.039">{{ Area * mampMaterials0[3].Cant | number : '1.0-1'}} m <sub>3</sub></P>
-                  <P *ngIf="Espesor == 0.031">{{ Area * mampMaterials1[3].Cant | number : '1.0-1'}} m <sub>3</sub></P>
-                  <P *ngIf="Espesor == 0.029">{{ Area * mampMaterials2[3].Cant | number : '1.0-1'}} m <sub>3</sub></P>
+                  <P>{{ mampMaterials0[3].Cant | number : '1.0-1'}} m <sub>3</sub></P>
                 </td>
               </tr>
               <tr>
                   <td style=" color:#2980b9;">3.2</td>
                   <td style="text-align:left;">
-                  <P *ngIf="Espesor == 0.039">{{ mampMaterials0[4].description}}</P>
-                  <P *ngIf="Espesor == 0.031">{{ mampMaterials1[4].description}}</P>
-                  <P *ngIf="Espesor == 0.029">{{ mampMaterials2[4].description}}</P>
+                  <P>{{ mampMaterials0[4].description}}</P>
                 </td>
                 <td>
-                  <P *ngIf="Espesor == 0.039">{{ Area * mampMaterials0[4].Cant | number : '1.2-2'}} m <sub>3</sub></P>
-                  <P *ngIf="Espesor == 0.031">{{ Area * mampMaterials1[4].Cant | number : '1.2-2'}} m <sub>3</sub></P>
-                  <P *ngIf="Espesor == 0.029">{{ Area * mampMaterials2[4].Cant | number : '1.2-2'}} m <sub>3</sub></P>
+                  <P>{{  mampMaterials0[4].Cant | number : '1.2-2'}} m <sub>3</sub></P>
                 </td>
                 <td>
-                  <P *ngIf="Espesor == 0.039">{{ Area * mampMaterials0[4].Cant | number : '1.0-1'}} m <sub>3</sub></P>
-                  <P *ngIf="Espesor == 0.031">{{ Area * mampMaterials1[4].Cant | number : '1.0-1'}} m <sub>3</sub></P>
-                  <P *ngIf="Espesor == 0.029">{{ Area * mampMaterials2[4].Cant | number : '1.0-1'}} m <sub>3</sub></P>
+                  <P>{{  mampMaterials0[4].Cant | number : '1.0-1'}} m <sub>3</sub></P>
                 </td>
               </tr>
 
@@ -130,73 +110,49 @@
               <tr>
                   <td>4</td>
                   <td style="text-align:left;">
-                  <P *ngIf="Espesor == 0.039">{{ mampMaterials0[5].description}}</P>
-                  <P *ngIf="Espesor == 0.031">{{ mampMaterials1[5].description}}</P>
-                  <P *ngIf="Espesor == 0.029">{{ mampMaterials2[5].description}}</P>
+                  <P>{{ mampMaterials0[5].description}}</P>
                 </td>
                 <td>
-                  <P *ngIf="Espesor == 0.039">{{ Area * mampMaterials0[5].Cant | number : '1.2-2'}} m <sub>3</sub></P>
-                  <P *ngIf="Espesor == 0.031">{{ Area * mampMaterials1[5].Cant | number : '1.2-2'}} m <sub>3</sub></P>
-                  <P *ngIf="Espesor == 0.029">{{ Area * mampMaterials2[5].Cant | number : '1.2-2'}} m <sub>3</sub></P>
+                  <P>{{  mampMaterials0[5].Cant | number : '1.2-2'}} m <sub>3</sub></P>
                 </td>
                 <td>
-                  <P *ngIf="Espesor == 0.039">{{ Area * mampMaterials0[5].Cant | number : '1.0-1'}} m <sub>3</sub></P>
-                  <P *ngIf="Espesor == 0.031">{{ Area * mampMaterials1[5].Cant | number : '1.0-1'}} m <sub>3</sub></P>
-                  <P *ngIf="Espesor == 0.029">{{ Area * mampMaterials2[5].Cant | number : '1.0-1'}} m <sub>3</sub></P>
+                  <P>{{  mampMaterials0[5].Cant | number : '1.0-1'}} m <sub>3</sub></P>
                 </td>
               </tr>
               <tr>
                   <td>5</td>
                   <td style="text-align:left;">
-                  <P *ngIf="Espesor == 0.039">{{ mampMaterials0[6].description}}</P>
-                  <P *ngIf="Espesor == 0.031">{{ mampMaterials1[6].description}}</P>
-                  <P *ngIf="Espesor == 0.029">{{ mampMaterials2[6].description}}</P>
+                  <P>{{ mampMaterials0[6].description}}</P>
                 </td>
                 <td>
-                  <P *ngIf="Espesor == 0.039">{{ Area * mampMaterials0[6].Cant | number : '1.2-2'}} fds</P>
-                  <P *ngIf="Espesor == 0.031">{{ Area * mampMaterials1[6].Cant | number : '1.2-2'}} fds</P>
-                  <P *ngIf="Espesor == 0.029">{{ Area * mampMaterials2[6].Cant | number : '1.2-2'}} fds</P>
+                  <P>{{  mampMaterials0[6].Cant | number : '1.2-2'}} fds</P>
                 </td>
                 <td>
-                  <P *ngIf="Espesor == 0.039">{{ Area * mampMaterials0[6].Cant | number : '1.0-1'}} fds</P>
-                  <P *ngIf="Espesor == 0.031">{{ Area * mampMaterials1[6].Cant | number : '1.0-1'}} fds</P>
-                  <P *ngIf="Espesor == 0.029">{{ Area * mampMaterials2[6].Cant | number : '1.0-1'}} fds</P>
+                  <P>{{  mampMaterials0[6].Cant | number : '1.0-1'}} fds</P>
                 </td>
               </tr>
               <tr>
                   <td>6</td>
                   <td style="text-align:left;">
-                  <P *ngIf="Espesor == 0.039">{{ mampMaterials0[7].description}}</P>
-                  <P *ngIf="Espesor == 0.031">{{ mampMaterials1[7].description}}</P>
-                  <P *ngIf="Espesor == 0.029">{{ mampMaterials2[7].description}}</P>
+                  <P>{{ mampMaterials0[7].description}}</P>
                 </td>
                 <td>
-                  <P *ngIf="Espesor == 0.039">{{ Area * mampMaterials0[7].Cant | number : '1.2-2'}} lb</P>
-                  <P *ngIf="Espesor == 0.031">{{ Area * mampMaterials1[7].Cant | number : '1.2-2'}} lb</P>
-                  <P *ngIf="Espesor == 0.029">{{ Area * mampMaterials2[7].Cant | number : '1.2-2'}} lb</P>
+                  <P>{{  mampMaterials0[7].Cant | number : '1.2-2'}} lb</P>
                 </td>
                 <td>
-                  <P *ngIf="Espesor == 0.039">{{ Area * mampMaterials0[7].Cant | number : '1.0-1'}} lb</P>
-                  <P *ngIf="Espesor == 0.031">{{ Area * mampMaterials1[7].Cant | number : '1.0-1'}} lb</P>
-                  <P *ngIf="Espesor == 0.029">{{ Area * mampMaterials2[7].Cant | number : '1.0-1'}} lb</P>
+                  <P>{{  mampMaterials0[7].Cant | number : '1.0-1'}} lb</P>
                 </td>
               </tr>
               <tr>
                   <td>7</td>
                   <td style="text-align:left;">
-                  <P *ngIf="Espesor == 0.039">{{ mampMaterials0[8].description}}</P>
-                  <P *ngIf="Espesor == 0.031">{{ mampMaterials1[8].description}}</P>
-                  <P *ngIf="Espesor == 0.029">{{ mampMaterials2[8].description}}</P>
+                  <P>{{ mampMaterials0[8].description}}</P>
                 </td>
                 <td>
-                  <P *ngIf="Espesor == 0.039">{{ Area * mampMaterials0[8].Cant | number : '1.2-2'}} gls</P>
-                  <P *ngIf="Espesor == 0.031">{{ Area * mampMaterials1[8].Cant | number : '1.2-2'}} gls</P>
-                  <P *ngIf="Espesor == 0.029">{{ Area * mampMaterials2[8].Cant | number : '1.2-2'}} gls</P>
+                  <P>{{  mampMaterials0[8].Cant | number : '1.2-2'}} gls</P>
                 </td>
                 <td>
-                  <P *ngIf="Espesor == 0.039" id="MAgua0">{{ Area * mampMaterials0[8].Cant | number : '1.0-0'}} gls</P>
-                  <P *ngIf="Espesor == 0.031">{{ Area * mampMaterials1[8].Cant | number : '1.0-0'}} gls</P>
-                  <P *ngIf="Espesor == 0.029">{{ Area * mampMaterials2[8].Cant | number : '1.0-0'}} gls</P>
+                  <P>{{  mampMaterials0[8].Cant | number : '1.0-0'}} gls</P>
                 </td>
               </tr>
             </tbody>
@@ -230,70 +186,183 @@
 
 </ion-content>
 
-        <!--<ion-row class="THTable">
-            <ion-col col-md-10>
-                No.
-            </ion-col>
-          <ion-col col-md-40>
-             Descripcion
-            </ion-col>
-          <ion-col col-md-20>
-              Cantidad
-          </ion-col>
-          <ion-col col-md-10>
-              Ud.
-          </ion-col>
-          <ion-col col-md-30>
-              Sub-Total
-          </ion-col>
-        </ion-row>
-        <ion-row class="rowTable">
-          <ion-col col-md-10>
-             <p>1</p>
-            </ion-col>
-          <ion-col col-md-40>
-            <P *ngIf="Espesor == 0.039">bloques de 0.20 mts (8")</P>
-            <P *ngIf="Espesor == 0.031">bloques de 0.15 mts (6")</P>
-            <P *ngIf="Espesor == 0.029">bloques de 0.10 mts (4")</P>
-          </ion-col>
-          <ion-col col-md-20>
-            <P *ngIf="Espesor == 0.039">{{ Area * mampMaterials0[0].Cant }}</P>
-            <P *ngIf="Espesor == 0.031">{{ Area * mampMaterials1[0].Cant }}</P>
-            <P *ngIf="Espesor == 0.029">{{ Area * mampMaterials2[0].Cant }}</P>
-          </ion-col>
-          <ion-col col-md-10>
-            <P *ngIf="Espesor == 0.039">{{ mampMaterials0[0].ud }}</P>
-            <P *ngIf="Espesor == 0.031">{{ mampMaterials1[0].ud }}</P>
-            <P *ngIf="Espesor == 0.029">{{ mampMaterials2[0].ud }}</P>
-          </ion-col>
-          <ion-col col-md-30>
-            <P *ngIf="Espesor == 0.039">{{ Area * mampMaterials0[0].Cant }}</P>
-            <P *ngIf="Espesor == 0.031">{{ Area * mampMaterials1[0].Cant }}</P>
-            <P *ngIf="Espesor == 0.029">{{ Area * mampMaterials2[0].Cant }}</P>
-        </ion-col>
-        </ion-row>
-        <ion-row class="rowTable">
-          <ion-col col-md-10>
-            2
-            </ion-col>
-          <ion-col col-md-40>
-            <P *ngIf="Espesor == 0.039">{{ mampMaterials0[1].description }}</P>
-            <P *ngIf="Espesor == 0.031">{{ mampMaterials1[1].description }}</P>
-            <P *ngIf="Espesor == 0.029">{{ mampMaterials2[1].description }}</P>
-          </ion-col>
-          <ion-col col-md-20>
-            <P *ngIf="Espesor == 0.039">{{ Area * mampMaterials0[1].Cant }}</P>
-            <P *ngIf="Espesor == 0.031">{{ Area * mampMaterials1[1].Cant }}</P>
-            <P *ngIf="Espesor == 0.029">{{ Area * mampMaterials2[1].Cant }}</P>
-          </ion-col>
-          <ion-col col-md-10>
-            <P *ngIf="Espesor == 0.039">{{ mampMaterials0[1].ud }}</P>
-            <P *ngIf="Espesor == 0.031">{{ mampMaterials1[1].ud }}</P>
-            <P *ngIf="Espesor == 0.029">{{ mampMaterials2[1].ud }}</P>
-          </ion-col>
-          <ion-col col-md-30>
-            <P *ngIf="Espesor == 0.039">{{ Area * mampMaterials0[1].Cant }}</P>
-            <P *ngIf="Espesor == 0.031">{{ Area * mampMaterials1[1].Cant }}</P>
-            <P *ngIf="Espesor == 0.029">{{ Area * mampMaterials2[1].Cant }}</P>
-          </ion-col>
-        </ion-row> -->
+        <!--        <table >
+            <thead class="THTable" >
+              <tr >
+                  <th>No.</th>
+                  <th>Descripcion</th>
+                  <th>Cantidad</th>
+                  <th>Sub-Total</th>
+              </tr>
+            </thead>
+      
+            <tbody>
+              <tr>
+                <td>1</td>
+                <td style="text-align:left;">
+                    <P> {{ mampMaterials0[0].description }} </P>
+
+                </td>
+                <td >
+                    <P *ngIf="Espesor == 0.039">{{ mampMaterials0[0].Cant | number : '1.2-2'}} ud</P>
+                    <P *ngIf="Espesor == 0.031">{{ mampMaterials1[0].Cant | number : '1.2-2'}} ud</P>
+                    <P *ngIf="Espesor == 0.029">{{ mampMaterials2[0].Cant | number : '1.2-2'}} ud</P>
+                </td>
+                <td>
+                    <P *ngIf="Espesor == 0.039">{{  mampMaterials0[0].Cant | number : '1.0-0'}} ud</P>
+                    <P *ngIf="Espesor == 0.031">{{  mampMaterials1[0].Cant | number : '1.0-0'}} ud</P>
+                    <P *ngIf="Espesor == 0.029">{{  mampMaterials2[0].Cant | number : '1.0-0'}} ud</P>
+                </td>
+              </tr>
+              <tr>
+                <td>2</td>
+                <td style="text-align:left;">
+                  <P *ngIf="Espesor == 0.039">{{ mampMaterials0[1].description}}</P>
+                  <P *ngIf="Espesor == 0.031">{{ mampMaterials1[1].description}}</P>
+                  <P *ngIf="Espesor == 0.029">{{ mampMaterials2[1].description}}</P>
+                </td>
+                <td>
+                  <P *ngIf="Espesor == 0.039">{{  mampMaterials0[1].Cant | number : '1.2-2'}} qq</P>
+                  <P *ngIf="Espesor == 0.031">{{  mampMaterials1[1].Cant | number : '1.2-2'}} qq</P>
+                  <P *ngIf="Espesor == 0.029">{{  mampMaterials2[1].Cant | number : '1.2-2'}} qq</P>
+                </td>
+                <td>
+                  <P *ngIf="Espesor == 0.039">{{ mampMaterials0[1].Cant | number : '1.1-1'}} qq</P>
+                  <P *ngIf="Espesor == 0.031">{{ mampMaterials1[1].Cant | number : '1.1-1'}} qq</P>
+                  <P *ngIf="Espesor == 0.029">{{ mampMaterials2[1].Cant | number : '1.1-1'}} qq</P>
+                </td>
+              </tr>
+              <tr >
+                <td style="background-color:#2980b9; color:#ecf0f1;">3</td>
+                <td style="text-align:left;">
+                <P *ngIf="Espesor == 0.039">{{ mampMaterials0[2].description}}</P>
+                <P *ngIf="Espesor == 0.031">{{ mampMaterials1[2].description}}</P>
+                <P *ngIf="Espesor == 0.029">{{ mampMaterials2[2].description}}</P>
+              </td>
+              <td >
+                <P *ngIf="Espesor == 0.039">{{  mampMaterials0[2].Cant | number : '1.2-2'}} m <sub>3</sub></P>
+                <P *ngIf="Espesor == 0.031">{{  mampMaterials1[2].Cant | number : '1.2-2'}} m <sub>3</sub></P>
+                <P *ngIf="Espesor == 0.029">{{  mampMaterials2[2].Cant | number : '1.2-2'}} m <sub>3</sub></P>
+              </td>
+              <td>
+                <P *ngIf="Espesor == 0.039">{{  mampMaterials0[2].Cant | number : '1.0-1'}} m <sub>3</sub></P>
+                <P *ngIf="Espesor == 0.031">{{  mampMaterials1[2].Cant | number : '1.0-1'}} m <sub>3</sub></P>
+                <P *ngIf="Espesor == 0.029">{{  mampMaterials2[2].Cant | number : '1.0-1'}} m <sub>3</sub></P>
+              </td>
+            </tr>
+
+              <tr>
+                  <td style=" color:#2980b9;">3.1</td>
+                  <td style="text-align:left;">
+                  <P *ngIf="Espesor == 0.039">{{ mampMaterials0[3].description}}</P>
+                  <P *ngIf="Espesor == 0.031">{{ mampMaterials1[3].description}}</P>
+                  <P *ngIf="Espesor == 0.029">{{ mampMaterials2[3].description}}</P>
+                </td>
+                <td>
+                  <P *ngIf="Espesor == 0.039">{{  mampMaterials0[3].Cant | number : '1.2-2'}} m <sub>3</sub></P>
+                  <P *ngIf="Espesor == 0.031">{{  mampMaterials1[3].Cant | number : '1.2-2'}} m <sub>3</sub></P>
+                  <P *ngIf="Espesor == 0.029">{{  mampMaterials2[3].Cant | number : '1.2-2'}} m <sub>3</sub></P>
+                </td>
+                <td>
+                  <P *ngIf="Espesor == 0.039">{{ mampMaterials0[3].Cant | number : '1.0-1'}} m <sub>3</sub></P>
+                  <P *ngIf="Espesor == 0.031">{{ mampMaterials1[3].Cant | number : '1.0-1'}} m <sub>3</sub></P>
+                  <P *ngIf="Espesor == 0.029">{{ mampMaterials2[3].Cant | number : '1.0-1'}} m <sub>3</sub></P>
+                </td>
+              </tr>
+              <tr>
+                  <td style=" color:#2980b9;">3.2</td>
+                  <td style="text-align:left;">
+                  <P *ngIf="Espesor == 0.039">{{ mampMaterials0[4].description}}</P>
+                  <P *ngIf="Espesor == 0.031">{{ mampMaterials1[4].description}}</P>
+                  <P *ngIf="Espesor == 0.029">{{ mampMaterials2[4].description}}</P>
+                </td>
+                <td>
+                  <P *ngIf="Espesor == 0.039">{{  mampMaterials0[4].Cant | number : '1.2-2'}} m <sub>3</sub></P>
+                  <P *ngIf="Espesor == 0.031">{{  mampMaterials1[4].Cant | number : '1.2-2'}} m <sub>3</sub></P>
+                  <P *ngIf="Espesor == 0.029">{{  mampMaterials2[4].Cant | number : '1.2-2'}} m <sub>3</sub></P>
+                </td>
+                <td>
+                  <P *ngIf="Espesor == 0.039">{{  mampMaterials0[4].Cant | number : '1.0-1'}} m <sub>3</sub></P>
+                  <P *ngIf="Espesor == 0.031">{{  mampMaterials1[4].Cant | number : '1.0-1'}} m <sub>3</sub></P>
+                  <P *ngIf="Espesor == 0.029">{{  mampMaterials2[4].Cant | number : '1.0-1'}} m <sub>3</sub></P>
+                </td>
+              </tr>
+
+              
+              <tr>
+                  <td>4</td>
+                  <td style="text-align:left;">
+                  <P *ngIf="Espesor == 0.039">{{ mampMaterials0[5].description}}</P>
+                  <P *ngIf="Espesor == 0.031">{{ mampMaterials1[5].description}}</P>
+                  <P *ngIf="Espesor == 0.029">{{ mampMaterials2[5].description}}</P>
+                </td>
+                <td>
+                  <P *ngIf="Espesor == 0.039">{{  mampMaterials0[5].Cant | number : '1.2-2'}} m <sub>3</sub></P>
+                  <P *ngIf="Espesor == 0.031">{{  mampMaterials1[5].Cant | number : '1.2-2'}} m <sub>3</sub></P>
+                  <P *ngIf="Espesor == 0.029">{{  mampMaterials2[5].Cant | number : '1.2-2'}} m <sub>3</sub></P>
+                </td>
+                <td>
+                  <P *ngIf="Espesor == 0.039">{{  mampMaterials0[5].Cant | number : '1.0-1'}} m <sub>3</sub></P>
+                  <P *ngIf="Espesor == 0.031">{{  mampMaterials1[5].Cant | number : '1.0-1'}} m <sub>3</sub></P>
+                  <P *ngIf="Espesor == 0.029">{{ mampMaterials2[5].Cant | number : '1.0-1'}} m <sub>3</sub></P>
+                </td>
+              </tr>
+              <tr>
+                  <td>5</td>
+                  <td style="text-align:left;">
+                  <P *ngIf="Espesor == 0.039">{{ mampMaterials0[6].description}}</P>
+                  <P *ngIf="Espesor == 0.031">{{ mampMaterials1[6].description}}</P>
+                  <P *ngIf="Espesor == 0.029">{{ mampMaterials2[6].description}}</P>
+                </td>
+                <td>
+                  <P *ngIf="Espesor == 0.039">{{  mampMaterials0[6].Cant | number : '1.2-2'}} fds</P>
+                  <P *ngIf="Espesor == 0.031">{{  mampMaterials1[6].Cant | number : '1.2-2'}} fds</P>
+                  <P *ngIf="Espesor == 0.029">{{ mampMaterials2[6].Cant | number : '1.2-2'}} fds</P>
+                </td>
+                <td>
+                  <P *ngIf="Espesor == 0.039">{{  mampMaterials0[6].Cant | number : '1.0-1'}} fds</P>
+                  <P *ngIf="Espesor == 0.031">{{  mampMaterials1[6].Cant | number : '1.0-1'}} fds</P>
+                  <P *ngIf="Espesor == 0.029">{{  mampMaterials2[6].Cant | number : '1.0-1'}} fds</P>
+                </td>
+              </tr>
+              <tr>
+                  <td>6</td>
+                  <td style="text-align:left;">
+                  <P *ngIf="Espesor == 0.039">{{ mampMaterials0[7].description}}</P>
+                  <P *ngIf="Espesor == 0.031">{{ mampMaterials1[7].description}}</P>
+                  <P *ngIf="Espesor == 0.029">{{ mampMaterials2[7].description}}</P>
+                </td>
+                <td>
+                  <P *ngIf="Espesor == 0.039">{{  mampMaterials0[7].Cant | number : '1.2-2'}} lb</P>
+                  <P *ngIf="Espesor == 0.031">{{  mampMaterials1[7].Cant | number : '1.2-2'}} lb</P>
+                  <P *ngIf="Espesor == 0.029">{{  mampMaterials2[7].Cant | number : '1.2-2'}} lb</P>
+                </td>
+                <td>
+                  <P *ngIf="Espesor == 0.039">{{  mampMaterials0[7].Cant | number : '1.0-1'}} lb</P>
+                  <P *ngIf="Espesor == 0.031">{{  mampMaterials1[7].Cant | number : '1.0-1'}} lb</P>
+                  <P *ngIf="Espesor == 0.029">{{  mampMaterials2[7].Cant | number : '1.0-1'}} lb</P>
+                </td>
+              </tr>
+              <tr>
+                  <td>7</td>
+                  <td style="text-align:left;">
+                  <P *ngIf="Espesor == 0.039">{{ mampMaterials0[8].description}}</P>
+                  <P *ngIf="Espesor == 0.031">{{ mampMaterials1[8].description}}</P>
+                  <P *ngIf="Espesor == 0.029">{{ mampMaterials2[8].description}}</P>
+                </td>
+                <td>
+                  <P *ngIf="Espesor == 0.039">{{  mampMaterials0[8].Cant | number : '1.2-2'}} gls</P>
+                  <P *ngIf="Espesor == 0.031">{{  mampMaterials1[8].Cant | number : '1.2-2'}} gls</P>
+                  <P *ngIf="Espesor == 0.029">{{  mampMaterials2[8].Cant | number : '1.2-2'}} gls</P>
+                </td>
+                <td>
+                  <P *ngIf="Espesor == 0.039" id="MAgua0">{{  mampMaterials0[8].Cant | number : '1.0-0'}} gls</P>
+                  <P *ngIf="Espesor == 0.031">{{  mampMaterials1[8].Cant | number : '1.0-0'}} gls</P>
+                  <P *ngIf="Espesor == 0.029">{{  mampMaterials2[8].Cant | number : '1.0-0'}} gls</P>
+                </td>
+              </tr>
+            </tbody>
+          </table>-->
+
+
+        

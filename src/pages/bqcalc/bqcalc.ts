@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, ModalController, ViewController} from 'ionic-angular';
 import { BresultadosPage } from '../bresultados/bresultados';
 import { AlertController } from 'ionic-angular';
+import { DatabaseProvider } from '../../providers/database/database'
 /**
  * Generated class for the BqcalcPage page.
  *
@@ -44,7 +45,7 @@ export class BqcalcPage {
   
   
 
-  constructor(public alertCtrl: AlertController, public navCtrl: NavController, public navParams: NavParams, public modalCtrl: ModalController, public viewCtrl: ViewController) {
+  constructor(private database:DatabaseProvider, public alertCtrl: AlertController, public navCtrl: NavController, public navParams: NavParams, public modalCtrl: ModalController, public viewCtrl: ViewController) {
     
      
   }
@@ -118,16 +119,23 @@ if ( this.valueAltura == null || this.valueAltura == 0 || this.valueBase == null
             });
 
     modalMamResut.present();
-      
-            
-    
     }
-}
- 
-  
+
+    this.database.createMaterilas(1, this.base*this.altura*12.875, 'bloques de 4', "ud", 'bloques de 4').then( (data) =>{
+      console.log(data);
+    },  (error) => {
+      console.log(error);
+    })
+
+    this.database.getMaterials().then((data) => {
+      console.log(data);
+    }, (error) => {
+      console.log(error);
+    }
+  )}
+       //this.viewCtrl.dismiss(altura_value);
     
-      //this.viewCtrl.dismiss(altura_value);
-  }
+      }
     
   //}
 

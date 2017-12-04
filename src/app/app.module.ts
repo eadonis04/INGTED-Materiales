@@ -11,6 +11,10 @@ import { BresultadosPage } from '../pages/bresultados/bresultados';
 
 import { EmailComposer } from '@ionic-native/email-composer';
 
+import { SQLite } from '@ionic-native/sqlite';
+import { DatabaseProvider } from '../providers/database/database'
+import { HttpModule } from '@angular/http'
+
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -26,6 +30,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
   ],
   imports: [
     BrowserModule,
+    HttpModule,
     IonicModule.forRoot(MyApp),
   ],
   bootstrap: [IonicApp],
@@ -40,6 +45,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     StatusBar,
     SplashScreen,
     EmailComposer,
+    SQLite,
+    DatabaseProvider,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })
