@@ -18,6 +18,9 @@ import { DatabaseProvider } from '../../providers/database/database'
 export class BqcalcPage {
   
   public MamBloques = [];
+  mampMaterials0: any[] = [];
+  arrayMatMamp:any; 
+  material = {};
    
   
 
@@ -49,8 +52,7 @@ export class BqcalcPage {
     
      
   }
-  radioValueButton(){
-  }
+
     
 //Valores radio Button 
 mamType: any[];
@@ -71,29 +73,67 @@ ngOnInit(): void {
     console.log('ionViewDidLoad BqcalcPage');
     //console.log(this.M_radioValue);
     console.log(this.mamType[0].value);
-    
 
-
-
-    
-    
 
   }
 
   mcqAnswer(M_radioValue){
     console.log(this.M_radioValue);
-   // let bloquesValue2: string = this.V_bloques;
-    //return bloquesValue2 ;
-
     
-   // let bloquesValue: number = this.M_radioValue;
-    
-    //return this.bloquesValue2;
-    //console.log(V_bloques);
-    //console.log(bloquesValue);
-    //console.log(bloquesValue2);
 
+    if (this.M_radioValue == 0.039) {
+      
+      this.mampMaterials0 = [
+        
+                {Cant: 12.875, description: `Bloques de 0.20 mts (8")`, ud: 'ud'},
+                {Cant: 0.055, description: 'Acero 3/8" x 20 G60', ud: 'qq'},
+                {Cant: 0.089, description: 'Hormigón 140 KG/cms2 (1:3:5 a mano)', ud:'m3'},
+                {Cant: 0.076, description: 'Grava Triturada de 3/4"', ud: 'm3' },
+                {Cant: 0.046, description: 'Arena Gruesa Lavada o Triturada', ud: 'm3' },
+                {Cant: 0.039, description: 'Arena gruesa ITABO (de mina para Mortero)', ud: 'm3' },
+                {Cant: 1.02, description: 'Cemento gris tipo Portland', ud: 'fda' },
+                {Cant: 0.11, description: 'Alambre dulce #18', ud: 'qq'},
+                {Cant: 8.03, description: 'Agua', Ud:'gal'},
+                {Cant: 0.039, description: 'Mortero 1:3 en juntas', Ud:'m3'},
+            ];
+        
+
+    } if (this.M_radioValue == 0.031) {
+
+      this.mampMaterials0 = [
+        
+                {Cant: 12.875, description: `Bloques de 0.15 mts (6")`, ud: 'ud'},
+                {Cant: 0.055, description: 'Acero 3/8" x 20 G60', ud: 'qq'},
+                {Cant: 0.024, description: 'Hormigón 140 KG/cms2 (1:3:5 a mano)', ud:'m3'},
+                {Cant: 0.02, description: 'Grava Triturada de 3/4"', ud: 'm3' },
+                {Cant: 0.012, description: 'Arena Gruesa Lavada o Triturada', ud: 'm3' },
+                {Cant: 0.029, description: 'Arena gruesa ITABO (de mina para Mortero)', ud: 'm3' },
+                {Cant: 0.50, description: 'Cemento gris tipo Portland', ud: 'fda' },
+                {Cant: 0.11, description: 'Alambre dulce #18'},
+                {Cant: 3.44, description: 'Agua',ud:'gal'},
+                {Cant: 0.031, description: 'Mortero 1:3 en juntas', Ud:'m3'},
+              ];
+
+      
+    } if (this.M_radioValue == 0.029) {
+
+     this.mampMaterials0 = [
+        
+                {Cant: 12.875, description: `Bloques de 0.10 mts (4")`, ud: 'ud'},
+                {Cant: 0.055, description: 'Acero 3/8" x 20 G60', ud: 'qq'},
+                {Cant: 0.020, description: 'Hormigón 140 KG/cms2 (1:3:5 a mano)', ud:'m3'},
+                {Cant: 0.017, description: 'Grava Triturada de 3/4"', ud: 'm3' },
+                {Cant: 0.010, description: 'Arena Gruesa Lavada o Triturada', ud: 'm3' },
+                {Cant: 0.021, description: 'Arena gruesa ITABO (de mina para Mortero)', ud: 'm3' },
+                {Cant: 0.37, description: 'Cemento gris tipo Portland', ud: 'fda' },
+                {Cant: 0.11, description: 'Alambre dulce #18'},
+                {Cant: 2.65, description: 'Agua',ud:'gal'},
+                {Cant: 0.029, description: 'Mortero 1:3 en juntas', ud:'m3'},
+            ];
+          }
+          console.log(this.mampMaterials0);
     }
+
 
     calc_mamposteria(){    
     
@@ -112,31 +152,36 @@ if ( this.valueAltura == null || this.valueAltura == 0 || this.valueBase == null
       base: this.valueBase,
       altura: this.valueAltura,
       tipoBloque: this.mamType,
-      espesor :this.M_radioValue})
+      espesor :this.mampMaterials0})
 
       modalMamResut.onDidDismiss(() => {
         
-            });
-
+            })
     modalMamResut.present();
     }
 
-    this.database.createMaterilas(1, this.base*this.altura*12.875, 'bloques de 4', "ud", 'bloques de 4').then( (data) =>{
-      console.log(data);
-    },  (error) => {
-      console.log(error);
-    })
 
-    this.database.getMaterials().then((data) => {
-      console.log(data);
-    }, (error) => {
-      console.log(error);
-    }
-  )}
-       //this.viewCtrl.dismiss(altura_value);
-    
+    /*this.database.createMaterilas( JSON.stringify(this.mampMaterials0[0].Cant), JSON.stringify(this.mampMaterials0[0].description ), JSON.stringify(this.mampMaterials0[0].ud), JSON.stringify(this.mampMaterials0[0].Cant) ).then ( (data) =>{
+      this.calc_mamposteria()
+       //console.log(data);
+     },  (error) => {
+       console.log(error);
+     })
+    this.material = {};
+
+    this.database.getMaterials().then(data =>{
+      this.arrayMatMamp = data;
+      console.log(this.arrayMatMamp[this.arrayMatMamp.length - 1]);
+      console.log(this.arrayMatMamp[this.arrayMatMamp.length - 1].description);
+      console.log(this.arrayMatMamp[this.arrayMatMamp.length - 1].amount);
+      console.log(this.arrayMatMamp[this.arrayMatMamp.length - 1].id);
+      console.log(this.arrayMatMamp[this.arrayMatMamp.length - 1].ud);
+      //let descripcion = this.arrayMatMamp[this.arrayMatMamp.length - 1].description;
+      //console.log(this.descripcion); 
+    });    
+    */
       }
-    
+    }
   //}
 
   /*this.valueBase;
