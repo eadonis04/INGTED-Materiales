@@ -34,18 +34,18 @@
             </thead>
       
             <tbody>
-              <tr>
+              <tr *ngFor="let materials of arrayMatMamp; let i = index">
                 <td>1</td>
                 <td style="text-align:left;">
-                    <P> {{ mampMaterials0[0].description }} + {{ database.materials }}</P>
+                    <P> {{ materials.description }} </P>
 
                 </td>
                 <td >
-                    <P>{{ mampMaterials0[0].Cant | number : '1.2-2'}} ud</P>
+                    <P>{{   materials.amount * materials.base *  materials.height | number : '1.2-2'}} ud</P>
                 </td>
                 <td>
-                    <P>{{  mampMaterials0[0].Cant | number : '1.0-0'}} ud</P>
-
+                    <P>{{   materials.amount * materials.base *  materials.height | number : '1.0-0'}} ud</P>
+ 
                 </td>
               </tr>
               <tr>
@@ -161,11 +161,15 @@
     </ion-grid> 
 
       <div style="text-align:center;">
-        <button ion-button style="width:120px; padding-bottom:5px;">Guardar</button>
+        <button ion-button style="width:120px; padding-bottom:5px;" (click)="SaveDate(materials)">Guardar</button>
       </div>
 
       <div style="text-align:center;">
           <button ion-button style="width:120px;" (click)="SendDateEmail()">Enviar</button>
+        </div>
+
+        <div style="text-align:center;">
+          <button ion-button style="width:120px;" (click)="deletematerials(1)">Delete</button>
         </div>
 
 
