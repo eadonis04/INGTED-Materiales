@@ -170,7 +170,7 @@ export class BresultadosPage {
                     ]);
                     console.log(csvData);
                     // create path to send file 
-                    let result = this.file.createDir( this.file.applicationDirectory, 'IngetdMaterials', true  );
+                    let result = this.file.createDir( this.file.externalRootDirectory, 'IngetdMaterials', true  );
 
                     result.then( data => {
                       this.dirPath = data.toURL();
@@ -185,7 +185,7 @@ export class BresultadosPage {
                     });
 
                     let url = 'cdvfile://localhost/persistent/path/to/downloads/';
-                    this.fileTransfer.download(url, this.file.applicationDirectory + 'Ingted Materiales').then((entry) => {
+                    this.fileTransfer.download(url, this.file.externalRootDirectory + 'Ingted Materiales').then((entry) => {
                       console.log('download complete: ' + entry.toURL());
                     }, (error) => {
                       console.log("download error source " + error.source);
