@@ -170,13 +170,13 @@ export class BresultadosPage {
                     ]);
                     console.log(csvData);
                     // create path to send file 
-                    let result = this.file.createDir( this.file.externalRootDirectory, 'IngetdMaterials', true  );
+                    let result = this.file.createDir( this.file.dataDirectory, 'IngetdMaterials', true  );
 
                     result.then( data => {
                       this.dirPath = data.toURL();
                         alert("Dirctorio Creado en " + this.dirPath);
                     // Send file 
-                        this.file.writeFile(this.dirPath, 'csvData.xlsx', csvData, {replace: true});
+                        this.file.writeFile(this.dirPath, 'csvData.xls', csvData, {replace: true});
                         alert("Archivo creado en" + this.dirPath)
                     }).catch( error => {
                       console.log("download error source " + error.source);
@@ -185,7 +185,7 @@ export class BresultadosPage {
                     });
 
                     let url = 'cdvfile://localhost/persistent/path/to/downloads/';
-                    this.fileTransfer.download(url, this.file.applicationDirectory + 'Ingted Materiales').then((entry) => {
+                    this.fileTransfer.download(url, this.file.dataDirectory + 'Ingted Materiales').then((entry) => {
                       console.log('download complete: ' + entry.toURL());
                     }, (error) => {
                       console.log("download error source " + error.source);
@@ -247,10 +247,10 @@ export class BresultadosPage {
                           var blob = new Blob([buffer], { type: 'application/pdf' });
                    
                           // Save the PDF to the data Directory of our App
-                          this.file.writeFile(this.file.externalRootDirectory, 'myletter.pdf', blob, { replace: true }).then(fileEntry => {
+                          this.file.writeFile(this.file.dataDirectory, 'myletter.pdf', blob, { replace: true }).then(fileEntry => {
                             console.log('download complete: ' + fileEntry.toURL());
                              // Open the PDf with the correct OS tools
-                            this.fileOpener.open(this.file.externalRootDirectory + 'myletter.pdf', 'application/pdf');
+                            this.fileOpener.open(this.file.dataDirectory + 'myletter.pdf', 'application/pdf');
                           }, (error) => {
                             console.log("download error source " + error.source);
                             console.log("download error target " + error.target);
